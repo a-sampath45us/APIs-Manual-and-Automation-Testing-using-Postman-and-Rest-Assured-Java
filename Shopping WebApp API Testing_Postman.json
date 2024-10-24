@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "8e24c8ad-b6e3-4e11-81aa-fbf68990a2a0",
+		"name": "Shopping WebApp API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38636016"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userEmail\": \"samusa@gmail.com\",\r\n    \"userPassword\": \"12345678Sa*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rahulshettyacademy.com/api/ecom/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmNiMDE4OWFlMmFmZDRjMGI1OGE5OWQiLCJ1c2VyRW1haWwiOiJzYW11c2FAZ21haWwuY29tIiwidXNlck1vYmlsZSI6MjU2Mzk0ODg1NSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyNzc2MTc0NCwiZXhwIjoxNzU5MzE5MzQ0fQ.TRlS-PhKBK7GtPpc9P_Q1rVvm0CPcV_eVHn68N75Uf4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productName",
+							"value": "lion",
+							"type": "text"
+						},
+						{
+							"key": "productAddedBy",
+							"value": "66cb0189ae2afd4c0b58a99d",
+							"type": "text"
+						},
+						{
+							"key": "productCategory",
+							"value": "fashion",
+							"type": "text"
+						},
+						{
+							"key": "productSubCategory",
+							"value": "shirts",
+							"type": "text"
+						},
+						{
+							"key": "productPrice",
+							"value": "11500",
+							"type": "text"
+						},
+						{
+							"key": "productDescription",
+							"value": "Addias Originals",
+							"type": "text"
+						},
+						{
+							"key": "productFor",
+							"value": "men",
+							"type": "text"
+						},
+						{
+							"key": "productImage",
+							"type": "file",
+							"src": "3klk_wsY_/images (4).jpeg"
+						}
+					]
+				},
+				"url": "https://rahulshettyacademy.com/api/ecom/product/add-product"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmNiMDE4OWFlMmFmZDRjMGI1OGE5OWQiLCJ1c2VyRW1haWwiOiJzYW11c2FAZ21haWwuY29tIiwidXNlck1vYmlsZSI6MjU2Mzk0ODg1NSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyNzc2MTc0NCwiZXhwIjoxNzU5MzE5MzQ0fQ.TRlS-PhKBK7GtPpc9P_Q1rVvm0CPcV_eVHn68N75Uf4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orders\": [\r\n        {\r\n            \"country\": \"India\",\r\n            \"productOrderedId\": \"66fb9135ae2afd4c0b8ae107\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rahulshettyacademy.com/api/ecom/order/create-order"
+			},
+			"response": []
+		},
+		{
+			"name": "View Order Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmNiMDE4OWFlMmFmZDRjMGI1OGE5OWQiLCJ1c2VyRW1haWwiOiJzYW11c2FAZ21haWwuY29tIiwidXNlck1vYmlsZSI6MjU2Mzk0ODg1NSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyNzc2MTc0NCwiZXhwIjoxNzU5MzE5MzQ0fQ.TRlS-PhKBK7GtPpc9P_Q1rVvm0CPcV_eVHn68N75Uf4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=66fb941dae2afd4c0b8ae4ab",
+					"protocol": "https",
+					"host": [
+						"rahulshettyacademy",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecom",
+						"order",
+						"get-orders-details"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "66fb941dae2afd4c0b8ae4ab"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmNiMDE4OWFlMmFmZDRjMGI1OGE5OWQiLCJ1c2VyRW1haWwiOiJzYW11c2FAZ21haWwuY29tIiwidXNlck1vYmlsZSI6MjU2Mzk0ODg1NSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyNzc3MzM4OSwiZXhwIjoxNzU5MzMwOTg5fQ.j4jfKBpKp6paIDE9wAGZqpG6aUSVxUrVWAWBVo6UNeo",
+						"type": "text"
+					}
+				],
+				"url": "https://rahulshettyacademy.com/api/ecom/product/delete-product/66fbbbb2ae2afd4c0b8b197a"
+			},
+			"response": []
+		}
+	]
+}

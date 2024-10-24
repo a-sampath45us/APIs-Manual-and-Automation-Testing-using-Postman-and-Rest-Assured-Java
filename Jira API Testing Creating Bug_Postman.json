@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "3eb36968-9e55-4413-9bb5-26a2712eb3fc",
+		"name": "Jira API Testing Creating Bug",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38636016"
+	},
+	"item": [
+		{
+			"name": "Create Bug",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YS5zYW1wYXRoNDV1c0BnbWFpbC5jb206QVRBVFQzeEZmR0YwLVdkUExCRVowXzk1WHNXSDY2dTF5VnhDekNyUzF3ZEVuQXYtX2VMTUFLVHJCbHBKZmVHSHFqYlFQS2s3QlBaY2tsWkRnZGU4NFRfR3hxdHFMc1ExMi1lajh2Q2E0d2VzOVRiSmIzLVNVaFBtQ0NWaXMzNFZDS3VPSjFoQ1ZOSG5uNFpLZzh0VVlUQ3JIb2lDTTg0Rk93TEgwWGJDQl9xTmdWR0VlZlBHQjNRPTU2MUJDQUE4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n       \"project\":\r\n       {\r\n          \"key\": \"SCRUM\"\r\n       },\r\n       \"reporter\": {\r\n      \"id\": \"63f915ad3ec8aa51d3d373d0\"\r\n    },\r\n       \"summary\": \"Dropdowns are not working\",\r\n       \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\r\n       \"issuetype\": {\r\n          \"name\": \"Bug\"\r\n       }\r\n   }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rajasampathkumar.atlassian.net/rest/api/2/issue"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YS5zYW1wYXRoNDV1c0BnbWFpbC5jb206QVRBVFQzeEZmR0YwLVdkUExCRVowXzk1WHNXSDY2dTF5VnhDekNyUzF3ZEVuQXYtX2VMTUFLVHJCbHBKZmVHSHFqYlFQS2s3QlBaY2tsWkRnZGU4NFRfR3hxdHFMc1ExMi1lajh2Q2E0d2VzOVRiSmIzLVNVaFBtQ0NWaXMzNFZDS3VPSjFoQ1ZOSG5uNFpLZzh0VVlUQ3JIb2lDTTg0Rk93TEgwWGJDQl9xTmdWR0VlZlBHQjNRPTU2MUJDQUE4",
+						"type": "text"
+					}
+				],
+				"url": "https://rajasampathkumar.atlassian.net/rest/api/2/myself"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Attachment to an Issue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Atlassian-Token",
+						"value": "no-check",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YS5zYW1wYXRoNDV1c0BnbWFpbC5jb206QVRBVFQzeEZmR0YwLVdkUExCRVowXzk1WHNXSDY2dTF5VnhDekNyUzF3ZEVuQXYtX2VMTUFLVHJCbHBKZmVHSHFqYlFQS2s3QlBaY2tsWkRnZGU4NFRfR3hxdHFMc1ExMi1lajh2Q2E0d2VzOVRiSmIzLVNVaFBtQ0NWaXMzNFZDS3VPSjFoQ1ZOSG5uNFpLZzh0VVlUQ3JIb2lDTTg0Rk93TEgwWGJDQl9xTmdWR0VlZlBHQjNRPTU2MUJDQUE4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "cZNexqzof/5+Step+by+Step+Instructions+to+run+first+basic+Selenium+Program.docx"
+						}
+					]
+				},
+				"url": "https://rajasampathkumar.atlassian.net/rest/api/2/issue/10001/attachments"
+			},
+			"response": []
+		}
+	]
+}

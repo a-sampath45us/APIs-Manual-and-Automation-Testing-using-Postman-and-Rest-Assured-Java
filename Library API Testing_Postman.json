@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "8e573701-749a-4b6c-a3a5-7d0a03c6ad6d",
+		"name": "Library API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38636016"
+	},
+	"item": [
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Restt API Automation with Java\",\r\n\"isbn\":\"abz\",\r\n\"aisle\":\"111\",\r\n\"author\":\"Sampath\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://216.10.245.166/Library/Addbook.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book AN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://216.10.245.166/Library/GetBook.php?AuthorName=Sampath",
+					"protocol": "http",
+					"host": [
+						"216",
+						"10",
+						"245",
+						"166"
+					],
+					"path": [
+						"Library",
+						"GetBook.php"
+					],
+					"query": [
+						{
+							"key": "AuthorName",
+							"value": "Sampath"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://216.10.245.166/Library/GetBook.php?ID=abz111",
+					"protocol": "http",
+					"host": [
+						"216",
+						"10",
+						"245",
+						"166"
+					],
+					"path": [
+						"Library",
+						"GetBook.php"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "abz111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"ID\" : \"a23h345122332\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://216.10.245.166/Library/DeleteBook.php"
+			},
+			"response": []
+		}
+	]
+}
